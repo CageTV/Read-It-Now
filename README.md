@@ -10,3 +10,11 @@ Based on CommonLibSSE NG:
 
 Based on the [SKSE Templates by mrowrpurr](https://github.com/SkyrimScripting/SKSE_Templates).
 Project is licensed under MIT.
+
+## Fork: Skyrim 1.7.x
+
+The Color-Glass CommonLibSSE-NG that `CMakeLists.txt` builds against cannot read the version 5 Address Library files of Skyrim 1.7.x. `ng.cmake` builds `ReadItNow.dll` on alandtse's CommonLibSSE-NG for Skyrim 1.6.1170 and 1.7.x; it is included from a parent CMake project that defines `ng_plugin()` (a thin wrapper around `add_commonlibsse_plugin`) and provides `simpleini` through vcpkg.
+
+`plugin.cpp` includes `SkyPrompt/API.hpp`, a header-only API that is not part of this repository. The build used the `include/SkyPrompt` folder of QTR-Modding/SkyPromptAPI at commit `8f3d0b22c8562dc236eeb8e7c61ea7dc2dd3d6a1`.
+
+The release zip contains only the DLL. Install Read It Now from Nexus first and let the DLL overwrite its own.
